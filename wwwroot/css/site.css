@@ -1,31 +1,133 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin-bottom: 60px;
+  max-width: 2800px;
+  width: 100%;
+  margin: auto;
+  overflow-x: hidden;
+  background-color: #f5f1df;
+  font-family: "Red Hat Display", arial, helvetica, sans-serif;
+  line-height: 1.5;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+h1,
+h2,
+h3 {
+  font-weight: 300;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+img {
+  width: 100%;
+  display: block;
 }
+
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+}
+
+a,
+button {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+main {
+  padding: 1em;
+}
+
+.text {
+  max-width: 50em;
+  margin: 2em auto;
+}
+.text h2 {
+  font-size: 1.8em;
+}
+.text p {
+  margin-bottom: 0.8em;
+}
+
+/* REGLER FÖR GEMENSAM LAYOUT */
+nav {
+  width: 80%;
+  margin: auto;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+nav a {
+  color: #458e78;
+  padding: 0.5em 1em;
+}
+nav a:hover {
+  color: #f9a03f;
+}
+
+.btn {
+  padding: 0.8em 1.3em;
+  background-color: #f9a03f;
+  color: white;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: #458e78;
+}
+
+.hero-cont {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+.hero-cont img {
+  width: 95%;
+  margin: auto;
+  max-width: 1200px;
+}
+.hero-cont .text-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-cont .text-info .hero-title {
+  font-family: "Averia Libre", Arial, helvetica, sans-serif;
+  font-size: 3.3em;
+  color: #6d2e25;
+}
+.hero-cont .text-info p {
+  letter-spacing: 1.1px;
+  font-size: 1.1em;
+}
+.hero-cont .text-info a {
+  margin-top: 2em;
+}
+
+footer {
+  color: #6d2e25;
+  padding: 1em;
+  margin-top: 2em;
+}
+footer img {
+  width: 30%;
+  max-width: 300px;
+  margin: 1.5em auto;
+}
+footer p {
+  text-align: center;
+}
+
+/*# sourceMappingURL=site.css.map */
