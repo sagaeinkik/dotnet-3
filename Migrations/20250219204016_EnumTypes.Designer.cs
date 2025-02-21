@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookApp.Migrations
 {
     [DbContext(typeof(BookAppContext))]
-    [Migration("20250219161350_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250219204016_EnumTypes")]
+    partial class EnumTypes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,9 +56,8 @@ namespace BookApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Type")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

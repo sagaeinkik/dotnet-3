@@ -5,7 +5,7 @@
 namespace BookApp.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class EnumTypes : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -31,7 +31,7 @@ namespace BookApp.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
-                    Type = table.Column<string>(type: "TEXT", nullable: false),
+                    Type = table.Column<int>(type: "INTEGER", nullable: false),
                     Genre = table.Column<string>(type: "TEXT", nullable: true),
                     Blurb = table.Column<string>(type: "TEXT", nullable: true),
                     AuthorId = table.Column<int>(type: "INTEGER", nullable: false)

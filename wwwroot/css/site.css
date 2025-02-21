@@ -21,6 +21,12 @@ h3 {
   font-weight: 300;
 }
 
+h1 {
+  font-family: "Averia Libre", Arial, helvetica, sans-serif;
+  color: #6d2e25;
+  font-size: 2.3em;
+}
+
 img {
   width: 100%;
   display: block;
@@ -128,6 +134,69 @@ footer img {
 }
 footer p {
   text-align: center;
+}
+
+/* Regler gällande böckers undersidor */
+.missing {
+  color: #6d2e25;
+}
+
+.book {
+  background-color: white;
+  padding: 1em;
+  margin-top: 2em;
+}
+.book h2 {
+  font-size: 1.6em;
+  font-family: "Averia Libre", Arial, helvetica, sans-serif;
+}
+.book .type {
+  font-style: italic;
+  color: grey;
+}
+.book .ctrls {
+  margin-top: 1.5em;
+  display: flex;
+  gap: 1em;
+}
+.book .ctrls a {
+  display: block;
+  padding: 0.4em 1em;
+  font-size: 1em;
+}
+.book .ctrls .details,
+.book .ctrls .back {
+  background-color: #458e78;
+}
+.book .ctrls .details:hover,
+.book .ctrls .back:hover {
+  background-color: #f9a03f;
+}
+.book .ctrls .delete {
+  background-color: #6d2e25;
+}
+.book .ctrls .delete:hover {
+  background-color: #458e78;
+}
+
+/* INDEX */
+.text .add {
+  margin-top: 1em;
+  display: block;
+  width: fit-content;
+}
+
+.books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.book.info {
+  padding: 2em;
+}
+.book.info p {
+  max-width: 40em;
 }
 
 /*# sourceMappingURL=site.css.map */

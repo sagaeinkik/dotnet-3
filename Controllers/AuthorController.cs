@@ -16,16 +16,16 @@ namespace BookApp.Controllers
             _context = context;
         }
 
-        // Alla författare
-        [Route("/authors")]
+        //Hämta alla författare
+        [Route("authors")]
         public async Task<IActionResult> Index()
         {
-            //returnera som lista
+            //Returnera alla i lista
             return View(await _context.Authors.ToListAsync());
         }
 
-        // Enskild författare
-        [Route("/authors/{id}")]
+        // Hämta enskild författare
+        [Route("authors/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -41,22 +41,24 @@ namespace BookApp.Controllers
                 return NotFound();
             }
 
-            //Skicka med i view
+            //Skicka till vy
             return View(author);
         }
 
-        //Skapa-formulär
-        [Route("/authors/create")]
+        // Skapa-formulär
+        [Route("authors/new")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // Skapa författare - POST
+        // Skapa - POST 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("authors/new")]
         public async Task<IActionResult> Create([Bind("Id,FullName,Bio")] Author author)
         {
+            //Validering
             if (ModelState.IsValid)
             {
                 _context.Add(author);
@@ -66,8 +68,8 @@ namespace BookApp.Controllers
             return View(author);
         }
 
-        //Författare att redigera
-        [Route("/authors/edit/{id}")]
+        // Redigera-formulär
+        [Route("authors/edit/{id}")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -83,9 +85,10 @@ namespace BookApp.Controllers
             return View(author);
         }
 
-        // Redigera författare - POST
+        // Redigera - POST
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("authors/edit/{id}")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,Bio")] Author author)
         {
             if (id != author.Id)
@@ -93,6 +96,7 @@ namespace BookApp.Controllers
                 return NotFound();
             }
 
+            //Validera
             if (ModelState.IsValid)
             {
                 try
@@ -111,13 +115,15 @@ namespace BookApp.Controllers
                         throw;
                     }
                 }
+                //Omdirigera tillbaka till lista över alla
                 return RedirectToAction(nameof(Index));
             }
+            //Visa fel
             return View(author);
         }
 
-        // Författare att radera
-        [Route("/authors/delete/{id}")]
+        // Delete-vy med detaljer
+        [Route("authors/delete/{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -125,6 +131,7 @@ namespace BookApp.Controllers
                 return NotFound();
             }
 
+            //Hitta författare
             var author = await _context.Authors
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (author == null)
@@ -135,17 +142,21 @@ namespace BookApp.Controllers
             return View(author);
         }
 
-        // Radera författare - POST
+        // Delete författare - POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Route("authors/delete/{id}")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            //Hitta
             var author = await _context.Authors.FindAsync(id);
             if (author != null)
             {
+                //Radera
                 _context.Authors.Remove(author);
             }
 
+            //Spara
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
