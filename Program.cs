@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-//Anslut till databasen 
+//Anslut till databasen
 builder.Services.AddDbContext<BookAppContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("BookAppConnection"))
 );
