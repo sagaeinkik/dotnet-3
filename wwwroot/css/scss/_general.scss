@@ -50,12 +50,12 @@ input[type='submit'] {
 }
 
 main {
-    padding: 1em;
-    max-width: 70em;
+    padding: 2em;
     margin: auto;
 }
 
 .content {
+    max-width: 70em;
     margin: 2em auto;
 }
 
@@ -111,7 +111,8 @@ nav {
 //Regler för Home Index
 
 .hero-cont {
-    width: 90%;
+    width: 80%;
+    max-width: 1800px;
     margin: auto;
     display: grid;
     gap: 1em;
@@ -123,7 +124,7 @@ nav {
     img {
         width: 95%;
         margin: auto;
-        max-width: 1200px;
+        max-width: 900px;
     }
 
     //Textinnehållet

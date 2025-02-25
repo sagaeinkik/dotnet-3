@@ -1,0 +1,80 @@
+@use 'vars' as v;
+
+/* Media queries för samtliga undersidor */
+
+@media (max-width: 835px) {
+    //Minska text-storlekar
+    p,
+    a,
+    span,
+    .hero-cont .text-info p,
+    .book .ctrls a {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+    //Hero-bild
+    .hero-cont {
+        width: 95%;
+
+        //Hokus bokus
+        .text-info .hero-title {
+            font-size: 2em;
+        }
+    }
+
+    //Minska bredd på book/author-cards
+    .book,
+    .author {
+        flex-basis: 15em;
+    }
+}
+
+@media (max-width: 465px) {
+    //Gör om hero-område till kolumn
+    .hero-cont {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'pic' 'info';
+
+        img {
+            grid-area: pic;
+            width: 100%;
+        }
+
+        .text-info {
+            grid-area: info;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    //Minska rubrikstorlekar
+    h1 {
+        font-size: 2em;
+    }
+
+    //Minska padding i kort
+    .book.info,
+    .author.info {
+        padding: 1em;
+    }
+    //Gör om knapplänkarna till wrap
+    .ctrls {
+        gap: 1em;
+        flex-wrap: wrap;
+
+        a {
+            flex-grow: 1;
+            flex-basis: fit-content;
+            text-align: center;
+        }
+    }
+
+    //Lägg till-formulär:
+    form select,
+    form input[type='submit'] {
+        width: 100%;
+    }
+}

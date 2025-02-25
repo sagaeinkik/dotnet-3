@@ -7,9 +7,22 @@
     color: v.$red;
 }
 
-// Bok/författarinfo
+//Bok-flex och författarflex
+.books,
+.authors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+// Bok/författar-kort
 .book,
 .author {
+    //Flexregler
+    flex-grow: 1;
+    flex-basis: 20em;
+
+    //allmänna kort-regler
     background-color: white;
     padding: 1em;
     margin-top: 2em;
@@ -27,22 +40,7 @@
     }
 }
 
-/* INDEX */
-//Lägg till-knapp
-.content .add {
-    margin-top: 1em;
-    display: block;
-    width: fit-content;
-}
-
-//Bok-flex och författarflex
-.books,
-.authors {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-}
-
+//Detalsidor
 .book.info,
 .author.info {
     padding: 2em;
@@ -55,4 +53,15 @@
         margin-top: 1em;
         margin-bottom: 0.4em;
     }
+
+    p.desc {
+        white-space: pre-wrap;
+    }
+}
+
+//Lägg till-knapp
+.content .add {
+    margin-top: 1em;
+    display: block;
+    width: fit-content;
 }

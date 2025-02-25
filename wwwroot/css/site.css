@@ -50,12 +50,12 @@ input[type=submit] {
 }
 
 main {
-  padding: 1em;
-  max-width: 70em;
+  padding: 2em;
   margin: auto;
 }
 
 .content {
+  max-width: 70em;
   margin: 2em auto;
 }
 
@@ -99,7 +99,8 @@ nav a:hover {
 }
 
 .hero-cont {
-  width: 90%;
+  width: 80%;
+  max-width: 1800px;
   margin: auto;
   display: grid;
   gap: 1em;
@@ -110,7 +111,7 @@ nav a:hover {
 .hero-cont img {
   width: 95%;
   margin: auto;
-  max-width: 1200px;
+  max-width: 900px;
 }
 .hero-cont .text-info {
   display: flex;
@@ -176,8 +177,17 @@ footer p {
   color: #6d2e25;
 }
 
+.books,
+.authors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
 .book,
 .author {
+  flex-grow: 1;
+  flex-basis: 20em;
   background-color: white;
   padding: 1em;
   margin-top: 2em;
@@ -193,20 +203,6 @@ footer p {
   color: grey;
 }
 
-/* INDEX */
-.content .add {
-  margin-top: 1em;
-  display: block;
-  width: fit-content;
-}
-
-.books,
-.authors {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-}
-
 .book.info,
 .author.info {
   padding: 2em;
@@ -220,6 +216,16 @@ footer p {
   color: grey;
   margin-top: 1em;
   margin-bottom: 0.4em;
+}
+.book.info p.desc,
+.author.info p.desc {
+  white-space: pre-wrap;
+}
+
+.content .add {
+  margin-top: 1em;
+  display: block;
+  width: fit-content;
 }
 
 /* GENERELLA REGLER FÖR FORMULÄR ex redigering/skapa */
@@ -259,6 +265,65 @@ form select {
 }
 form select:focus {
   outline: 2px dotted #458e78;
+}
+
+/* Media queries för samtliga undersidor */
+@media (max-width: 835px) {
+  p,
+  a,
+  span,
+  .hero-cont .text-info p,
+  .book .ctrls a {
+    font-size: 0.9em;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+  .hero-cont {
+    width: 95%;
+  }
+  .hero-cont .text-info .hero-title {
+    font-size: 2em;
+  }
+  .book,
+  .author {
+    flex-basis: 15em;
+  }
+}
+@media (max-width: 465px) {
+  .hero-cont {
+    grid-template-columns: 1fr;
+    grid-template-areas: "pic" "info";
+  }
+  .hero-cont img {
+    grid-area: pic;
+    width: 100%;
+  }
+  .hero-cont .text-info {
+    grid-area: info;
+  }
+}
+@media (max-width: 420px) {
+  h1 {
+    font-size: 2em;
+  }
+  .book.info,
+  .author.info {
+    padding: 1em;
+  }
+  .ctrls {
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+  .ctrls a {
+    flex-grow: 1;
+    flex-basis: fit-content;
+    text-align: center;
+  }
+  form select,
+  form input[type=submit] {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=site.css.map */
