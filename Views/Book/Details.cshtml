@@ -10,7 +10,7 @@
     <section class="book info">
         <span class="type">@Model.Type</span> @(!string.IsNullOrEmpty(@Model.Genre) ? $"| {@Model.Genre}" : "")
         <h2 class="title">@Model.Title</h2>
-        <p class="author">@Model.Author!.FullName</p>
+        <p class="author-p">@Model.Author!.FullName</p>
         @if (@Model.Blurb != null)
         {
             <p class="desc">@Model.Blurb</p>

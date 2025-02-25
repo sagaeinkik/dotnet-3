@@ -1,48 +1,50 @@
 @model BookApp.Models.Book
 
 @{
-    ViewData["Title"] = "Lägg till";
+    ViewData["Title"] = "Lägg till bok";
 }
 
-<h1>Lägg till en bok</h1>
-<h2>Bok</h2>
-<form asp-action="Create">
-    <div asp-validation-summary="ModelOnly" class="error"></div>
-    <div class="form-group">
-        <label asp-for="Title"></label>
-        <input asp-for="Title" />
-        <span asp-validation-for="Title" class="error"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Type"></label>
-        <select asp-for="Type">
-            <option value="" disabled selected>Välj i listan</option>
-            <option value="Skönlitteratur">Skönlitteratur</option>
-            <option value="Facklitteratur">Facklitteratur</option>
-        </select>
-        <span asp-validation-for="Type" class="error"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Genre"></label>
-        <input asp-for="Genre" />
-        <span asp-validation-for="Genre" class="error"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Blurb"></label>
-        <textarea asp-for="Blurb"></textarea>
-        <span asp-validation-for="Blurb" class="error"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="AuthorId">Författare</label>
-        <select asp-for="AuthorId" asp-items="ViewBag.AuthorId"></select>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Lägg till" class="btn btn-primary" />
-    </div>
-</form>
 
-<div>
-    <a asp-action="Index">Se hela listan</a>
+<div class="text">
+    <h1>Lägg till en bok</h1>
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="error"></div>
+        <div class="form-group">
+            <label asp-for="Title"></label>*
+            <input asp-for="Title" />
+            <span asp-validation-for="Title" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Type"></label>*
+            <select asp-for="Type">
+                <option value="" disabled selected>Välj i listan</option>
+                <option value="Skönlitteratur">Skönlitteratur</option>
+                <option value="Facklitteratur">Facklitteratur</option>
+            </select>
+            <span asp-validation-for="Type" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Genre"></label>
+            <input asp-for="Genre" />
+            <span asp-validation-for="Genre" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Blurb"></label>
+            <textarea asp-for="Blurb"></textarea>
+            <span asp-validation-for="Blurb" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AuthorId">Författare</label>*
+            <select asp-for="AuthorId" asp-items="ViewBag.AuthorId"></select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Lägg till" class="btn" />
+        </div>
+    </form>
+
+    <div class="ctrls">
+        <a asp-action="Index" class="btn back">Se alla böcker</a>
+    </div>
 </div>
 
 @section Scripts {

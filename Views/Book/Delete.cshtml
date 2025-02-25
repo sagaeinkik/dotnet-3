@@ -4,16 +4,31 @@
     ViewData["Title"] = "Radera";
 }
 
-<h1>Radera bok</h1>
-<div class="book info">
-    <p class="type">@Model.Type</p>
-    <p class="title">@Model.Title</p>
-    <p class="author">@Model.Author!.FullName</p>
-    <p class="desc">@Model.Blurb</p>
-    <p class="genre">@Model.Genre</p>
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Radera" class="btn" />
-    </form>
-    <a asp-action="Index">Se alla böcker</a>
+<div class="text">
+
+    <h1>Ta bort bok</h1>
+    <h3>Är du helt säker på att du vill ta bort denna?</h3>
+    <section class="book info">
+        <span class="type">@Model.Type</span> @(!string.IsNullOrEmpty(@Model.Genre) ? $"| {@Model.Genre}" : "")
+        <h2 class="title">@Model.Title</h2>
+        <p class="author-p">@Model.Author!.FullName</p>
+        @if (@Model.Blurb != null)
+        {
+            <p class="desc">@Model.Blurb</p>
+        }
+        else
+        {
+            <p class="missing">Det finns ingen beskrivning...</p>
+        }
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Radera" class="btn delete" />
+        </form>
+        <div class="ctrls">
+
+            <a asp-action="Index" class="btn back">Se alla böcker</a>
+        </div>
+    </section>
+
 </div>

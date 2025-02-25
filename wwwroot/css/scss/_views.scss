@@ -1,0 +1,58 @@
+@use 'vars' as v;
+
+/* Regler gällande böckers och författares undersidor */
+
+//Text saknas
+.missing {
+    color: v.$red;
+}
+
+// Bok/författarinfo
+.book,
+.author {
+    background-color: white;
+    padding: 1em;
+    margin-top: 2em;
+
+    //Titel
+    h2 {
+        font-size: 1.6em;
+        font-family: v.$stressed;
+    }
+
+    //Typ
+    .type {
+        font-style: italic;
+        color: grey;
+    }
+}
+
+/* INDEX */
+//Lägg till-knapp
+.content .add {
+    margin-top: 1em;
+    display: block;
+    width: fit-content;
+}
+
+//Bok-flex och författarflex
+.books,
+.authors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.book.info,
+.author.info {
+    padding: 2em;
+    p {
+        max-width: 40em;
+    }
+
+    p.bio {
+        color: grey;
+        margin-top: 1em;
+        margin-bottom: 0.4em;
+    }
+}

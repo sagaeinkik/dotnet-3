@@ -40,20 +40,28 @@ nav ul li a {
 }
 
 a,
-button {
+button,
+input[type=submit] {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 main {
   padding: 1em;
+  max-width: 70em;
+  margin: auto;
+}
+
+.content {
+  margin: 2em auto;
 }
 
 .text {
   max-width: 50em;
-  margin: 2em auto;
+  margin: auto;
 }
 .text h2 {
   font-size: 1.8em;
@@ -91,7 +99,7 @@ nav a:hover {
 }
 
 .hero-cont {
-  width: 80%;
+  width: 90%;
   margin: auto;
   display: grid;
   gap: 1em;
@@ -122,6 +130,33 @@ nav a:hover {
   margin-top: 2em;
 }
 
+.ctrls {
+  margin-top: 1.5em;
+  display: flex;
+  gap: 1em;
+}
+.ctrls a {
+  display: block;
+  padding: 0.4em 1em;
+  font-size: 1em;
+}
+
+.details,
+.back {
+  background-color: #458e78;
+}
+.details:hover,
+.back:hover {
+  background-color: #f9a03f;
+}
+
+.delete {
+  background-color: #6d2e25;
+}
+.delete:hover {
+  background-color: #f9a03f;
+}
+
 footer {
   color: #6d2e25;
   padding: 1em;
@@ -136,67 +171,94 @@ footer p {
   text-align: center;
 }
 
-/* Regler gällande böckers undersidor */
+/* Regler gällande böckers och författares undersidor */
 .missing {
   color: #6d2e25;
 }
 
-.book {
+.book,
+.author {
   background-color: white;
   padding: 1em;
   margin-top: 2em;
 }
-.book h2 {
+.book h2,
+.author h2 {
   font-size: 1.6em;
   font-family: "Averia Libre", Arial, helvetica, sans-serif;
 }
-.book .type {
+.book .type,
+.author .type {
   font-style: italic;
   color: grey;
 }
-.book .ctrls {
-  margin-top: 1.5em;
-  display: flex;
-  gap: 1em;
-}
-.book .ctrls a {
-  display: block;
-  padding: 0.4em 1em;
-  font-size: 1em;
-}
-.book .ctrls .details,
-.book .ctrls .back {
-  background-color: #458e78;
-}
-.book .ctrls .details:hover,
-.book .ctrls .back:hover {
-  background-color: #f9a03f;
-}
-.book .ctrls .delete {
-  background-color: #6d2e25;
-}
-.book .ctrls .delete:hover {
-  background-color: #458e78;
-}
 
 /* INDEX */
-.text .add {
+.content .add {
   margin-top: 1em;
   display: block;
   width: fit-content;
 }
 
-.books {
+.books,
+.authors {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
 }
 
-.book.info {
+.book.info,
+.author.info {
   padding: 2em;
 }
-.book.info p {
+.book.info p,
+.author.info p {
   max-width: 40em;
+}
+.book.info p.bio,
+.author.info p.bio {
+  color: grey;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+}
+
+/* GENERELLA REGLER FÖR FORMULÄR ex redigering/skapa */
+input,
+textarea,
+select {
+  border: none;
+  font-size: 1em;
+  font-family: "Red Hat Display", arial, helvetica, sans-serif;
+  display: block;
+}
+
+form .error {
+  color: red;
+}
+form .form-group {
+  margin-bottom: 1em;
+}
+form label {
+  margin-left: 0.4em;
+}
+form input[type=text],
+form textarea {
+  width: 100%;
+  padding: 0.5em;
+}
+form input[type=text]:focus,
+form textarea:focus {
+  outline: 2px dotted #458e78;
+}
+form textarea {
+  height: 10em;
+}
+form select {
+  padding: 0.5em;
+  width: 50%;
+}
+form select:focus {
+  outline: 2px dotted #458e78;
 }
 
 /*# sourceMappingURL=site.css.map */

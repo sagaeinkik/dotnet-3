@@ -43,18 +43,26 @@ nav ul li {
 }
 
 a,
-button {
+button,
+input[type='submit'] {
     @include v.transition;
+    cursor: pointer;
 }
 
 main {
     padding: 1em;
+    max-width: 70em;
+    margin: auto;
+}
+
+.content {
+    margin: 2em auto;
 }
 
 //Text-avsnitt
 .text {
     max-width: 50em;
-    margin: 2em auto;
+    margin: auto;
 
     h2 {
         font-size: 1.8em;
@@ -103,7 +111,7 @@ nav {
 //Regler för Home Index
 
 .hero-cont {
-    width: 80%;
+    width: 90%;
     margin: auto;
     display: grid;
     gap: 1em;
@@ -140,6 +148,38 @@ nav {
         a {
             margin-top: 2em;
         }
+    }
+}
+
+//Knappar
+.ctrls {
+    margin-top: 1.5em;
+    display: flex;
+    gap: 1em;
+
+    //Länkarna
+    a {
+        display: block;
+        padding: 0.4em 1em;
+        font-size: 1em;
+    }
+}
+//detaljer
+.details,
+.back {
+    background-color: v.$turquoise;
+
+    &:hover {
+        background-color: v.$orange;
+    }
+}
+
+//Radera
+.delete {
+    background-color: v.$red;
+
+    &:hover {
+        background-color: v.$orange;
     }
 }
 

@@ -1,0 +1,52 @@
+@use 'vars' as v;
+
+/* GENERELLA REGLER FÖR FORMULÄR ex redigering/skapa */
+input,
+textarea,
+select {
+    border: none;
+    font-size: 1em;
+    font-family: v.$sans;
+    display: block;
+}
+
+form {
+    //errormeddelanden
+    .error {
+        color: red;
+    }
+
+    //formulärkontroller
+    .form-group {
+        margin-bottom: 1em;
+    }
+
+    label {
+        margin-left: 0.4em;
+    }
+
+    input[type='text'],
+    textarea {
+        width: 100%;
+        padding: 0.5em;
+
+        &:focus {
+            outline: 2px dotted v.$turquoise;
+        }
+    }
+
+    //Beskrivning
+    textarea {
+        height: 10em;
+    }
+
+    //Select-listor
+    select {
+        padding: 0.5em;
+        width: 50%;
+
+        &:focus {
+            outline: 2px dotted v.$turquoise;
+        }
+    }
+}
